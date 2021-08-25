@@ -33,7 +33,13 @@ module.exports = {
         rules: [
             {
                 test: /\.html$/,
-                use: 'html-loader'
+                use: [
+                    { 
+                        loader: 'html-loader',
+                    options: {
+                        attributes: true
+                      } }
+                ]
             },
             {
                 test: /\.(less|css)$/,
@@ -51,13 +57,8 @@ module.exports = {
                         loader: 'url-loader',
                         options: {
                             limit: 8192,
-                            name: 'static/[name].[ext]?[hash:6]'
-                        }
-                    },
-                    { // 压缩图片：https://github.com/tcoopman/image-webpack-loader
-                        loader: 'image-webpack-loader',
-                        options: {
-                            bypassOnDebug: true
+                            name: 'static/[name].[ext]?[hash:6]',
+                            esModule: false
                         }
                     }
                 ]
@@ -68,7 +69,9 @@ module.exports = {
                     loader: 'url-loader',
                     options: {
                         limit: 8192,
-                        name: 'static/[name].[ext]?[hash:6]'
+                        name: 'static/[name].[ext]?[hash:6]',
+                        outputPath: "imgs",//打包后dist文件夹下将创建的文件目录
+                        publicPath: "./imgs", //打包后，build目录下，index.html中img src该访问的路径
                     }
                 }
             }

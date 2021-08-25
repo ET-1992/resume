@@ -19,7 +19,7 @@ body {
     -webkit-font-smoothing: antialiased;
     -webkit-text-size-adjust: none;
     font-family: @font-family;
-    font-size: 14px;
+    font-size: 13px;
     line-height: 22 / 14;
     color: #333;
     background-color: #eee;
@@ -147,7 +147,7 @@ a {
                 border-top: 1px solid darken(@color-main, 2%);
             }
             small {
-                font-size: 14px;
+                font-size: 13px;
             }
         }
     }
@@ -177,7 +177,7 @@ a {
                 }
                 > a {
                     font-family: @font-family-title;
-                    font-size: 14px;
+                    font-size: 13px;
                     line-height: 23px;
                     color: #fff;
                     &:hover {
@@ -209,7 +209,7 @@ a {
     }
     .content-left,
     .content-right {
-        width: 50%;
+        width: 100%;
         @media screen and (max-width: 1024px) {
             width: 100%;
         }
@@ -295,7 +295,7 @@ a {
         }
     }
     .item-stage {
-        color: #666;
+        // color: #666;
         font-size: 13px;
         .item-hd {
             padding: 0 0 2px;
@@ -316,7 +316,7 @@ a {
         .item-time {
             float: left;
             display: inline-block;
-            font-size: 14px;
+            font-size: 13px;
             width: 135px;
             @media screen and (max-width: 720px) {
                 width: 100%;
@@ -365,16 +365,20 @@ a {
             padding: 0 4px;
             background-color: #f6f6f6;
         }
-        strong {
+        strong, .strong { 
             font-family: @font-family;
             font-size: 13px;
             line-height: 15px;
             font-weight: 500;
-            color: #494949;
+            // color: #494949;
             margin: 0 3px;
             padding: 0 4px;
             border-bottom: 1px solid #eee;
-            box-shadow: inset 0 -8px #eee;
+            // box-shadow: inset 0 -8px #eee;
+        }
+
+        .weight-500 {
+            font-weight: 500;
         }
     }
 }
@@ -391,7 +395,7 @@ a {
     border-radius: 3px;
     font-family: Menlo, @font-family;
     height: 20px !important;
-    font-size: 14px !important;
+    font-size: 13px !important;
     line-height: 18px !important;
     margin: 2px 0;
     text-align: center;
@@ -488,3 +492,30 @@ footer {
     background: #d1d1d1;
 }
 
+.line {
+    display: inline-block;
+    // position: absolute;
+    // top: 50%;
+    width: 100%;
+    height: 0;
+    border-top: 1px solid #ededed;
+    vertical-align: middle;
+    margin: 20px 0;
+}
+
+.biaoqian {
+    // margin-left: 20px;
+    float: right;
+    strong {
+        font-family: 'Helvetica Neue',Helvetica,'PingFang SC','Microsoft YaHei','微软雅黑',Arial,sans-serif;
+        font-size: 13px;
+        line-height: 15px;
+        // font-weight: 500;
+        margin: 0 6px;
+        padding: 0 6px;
+        border-bottom: 1px solid #e6e6e6;
+        background-color: #f6f6f6;
+        border-radius: 3px;
+        color: #383838;
+    }
+}
